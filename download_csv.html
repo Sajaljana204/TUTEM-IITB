@@ -60,6 +60,7 @@
         <div class="buttons">
             <button class="button" id="noSurvey">No survey</button>
             <button class="button" id="download">Download data</button>
+            <button class="button" id="clearData">Clear Data</button>
         </div>
     </div>
 
@@ -113,6 +114,23 @@
             link.click();
         });
 
+        document.getElementById('clearData').addEventListener('click', function () {
+            // Show a confirmation dialog
+            const userConfirmed = confirm('Are you sure you want to clear all data?');
+
+            // Check if the user clicked "OK"
+            if (userConfirmed) {
+                // Clear all data from local storage
+                localStorage.removeItem('formdata');
+
+                // Optionally, you can also clear any other variables or perform additional cleanup if needed
+
+                // Alert the user that the data has been cleared (you can customize this message)
+                alert('Data has been cleared.');
+
+                // Optionally, you can redirect or perform other actions after clearing the data
+            }
+        });
         
     
 
