@@ -194,6 +194,10 @@ img {
     margin-left: 10px;
 }
 
+.text-container label{
+    font-size: small;
+}
+
 .input_boxx input{
     width: 100px;
     height: 8px;
