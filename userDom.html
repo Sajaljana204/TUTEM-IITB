@@ -152,7 +152,10 @@
                         <label for="">No</label>
                     </div>
                 </div>
-                <button type="button" id="next1">Next</button>
+                <div class="buttons">
+                    <button type="button" id="entryBack">Back</button>
+                    <button type="button" id="next1">Next</button>
+                </div>
             </div>
 
             <!-- Form 2: User Information -->
@@ -1933,6 +1936,10 @@
             document.querySelector('.form-second').style.display = 'none';
             document.querySelector('.form-first').style.display = 'block';
         });
+
+        entryBack.addEventListener('click', function(){
+            window.location.href = "entry.html";
+        })
 
         document.getElementById('next2').addEventListener('click', function () {
             let columnB = document.querySelector('input[name="transportation"]:checked').value;
