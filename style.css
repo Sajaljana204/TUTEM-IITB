@@ -114,7 +114,10 @@ body{
     font-weight: bold;
     margin: 5px 0;
 }
-
+.required{
+    color: red;
+    margin-left: 3px;
+}
 .project-title {
     width: 50%; /* Adjust the width to your preference */
     margin: 0 auto; /* Auto for left and right margins centers the element horizontally */
