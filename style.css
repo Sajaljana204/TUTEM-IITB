@@ -198,7 +198,7 @@ img {
 }
 
 .text-container label{
-    font-size: small;
+    font-size: 14px;
 }
 
 .input_boxx input{
@@ -242,6 +242,9 @@ p {
 
     .img_container .text-container p {
         font-size: small;
+    }
+    .text-container label{
+    font-size: 14px;
     }
 
     .img_container .text-container .input_boxx input {
