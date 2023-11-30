@@ -224,6 +224,9 @@ p {
 .fourth_column{
     padding-top: 55px;
 }
+.text-container label{
+    font-size: 10px;
+}
 
 @media (max-width: 768px) {
     .img_container {
