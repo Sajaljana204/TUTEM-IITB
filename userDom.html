@@ -2154,6 +2154,20 @@
                 document.querySelector('.form-second').style.display = 'block';
             }
         });
+        function alertAndColor(message, fieldClass) {
+            alert(message);
+            const fields = document.querySelectorAll(`.${fieldClass}`);
+            fields.forEach(field => {
+                field.style.color = 'red';
+            });
+        }
+
+        function resetFieldColors() {
+            const fields = document.querySelectorAll('.GenderColor, ._Ename, ._Route, ._Income, ._Age, ._Employment, ._Education, ._origin-area, ._origin-pin, ._Destination-area, ._Destination-pin, ._City');
+            fields.forEach(field => {
+                field.style.color = ''; // Reset the color to the default
+            });
+        }
 
         document.getElementById('back1').addEventListener('click', function () {
             document.querySelector('.form-second').style.display = 'none';
