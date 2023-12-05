@@ -2115,7 +2115,7 @@
             resetFieldColors();
 
             const genderSelected = document.querySelector('input[name="gender"]:checked');
-            const enameField = document.querySelector('input[name="ename"]');
+            const enameField = document.querySelector('input[name="ename"]').value.trim();
             const routeField = document.querySelector('input[name="route"]');
             const incomeSelected = document.querySelector('input[name="income"]:checked');
             const ageSelected = document.querySelector('input[name="age"]:checked');
@@ -2127,31 +2127,11 @@
             const destinationpinField = document.querySelector('input[name="destination_pin"]');
             const cityselected = document.querySelector('input[name="city"]:checked');
 
-            if (!genderSelected) {
-                alertAndColor('Please select a gender.', 'GenderColor');
-            } else if (!enameField.value.trim()) {
-                alertAndColor('Please enter Enumerator\'s Name.', '_Ename');
-            } else if (!routeField.value.trim()) {
-                alertAndColor('Please enter a route.', '_Route');
-            } else if (!incomeSelected) {
-                alertAndColor('Please select an income.', '_Income');
-            } else if (!ageSelected) {
-                alertAndColor('Please select an age.', '_Age');
-            } else if (!employmentSelected) {
-                alertAndColor('Please select an employment.', '_Employment');
-            } else if (!educationSelected) {
-                alertAndColor('Please select an education.', '_Education');
-            } else if (!originareaField.value.trim()) {
-                alertAndColor('Please enter the origin area.', '_origin-area');
-            } else if (!destinationareaField.value.trim()) {
-                alertAndColor('Please enter the destination area.', '_Destination-area');
-            } else if (!cityselected) {
-                alertAndColor('Please select a city.', '_City');
-            } else {
-                // If all fields are valid, you can proceed with your logic here
-                // For example, you can hide the current form and display the next one
+            if (enameField) {
                 document.querySelector('.form-first').style.display = 'none';
                 document.querySelector('.form-second').style.display = 'block';
+            } else {
+                alert("Please fill the Enumerator's Name");
             }
         });
         function alertAndColor(message, fieldClass) {
@@ -2328,236 +2308,238 @@
             const fQ32schecked = document.querySelector('input[name="fQ32s"]:checked');
             const fQ33ichecked = document.querySelector('input[name="fQ33i"]:checked');
             const fQ33schecked = document.querySelector('input[name="fQ33s"]:checked');
+            document.querySelector('.form-second').style.display = 'none';
+            document.querySelector('.form-third').style.display = 'block';
 
-            if (travel_work && travel_partner && travel_purpose && travel_11 && Q34 && Q35 && Q36 && Q37 && Q38 && Q39 && Q40 && originType && startingTime && duration && transportation && waitingTime && cToe && waitingTimeE && durationf && ftransportation && destinationType && endTime) {
-                const Q40check = document.querySelector('input[name="Q40"]:checked').value;
-                if (Q40check === '1') {
-                    if (Q40a && Q40b) {
-                        if (columnB === 'walk' || columnB === 'bicycle') {
-                            if (columnF === 'walk' || columnF === 'bicycle') {
-
-                                const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q13ichecked && fQ13iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-
-                            } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                                const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
-                                const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q13iChecked && fQ22iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-
-                            } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                                const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
-                                const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q13iChecked && fQ29iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-
-                            }
-
-                        } else if (columnB === 'auto' || columnB === 'auto_app' || columnB === 'cab(app)' || columnB === 'cab' || columnB === '2-Wheeler(app)') {
-                            if (columnF === 'walk' || columnF === 'bicycle') {
-                                const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                                const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q22iChecked && fQ13iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-
-                            } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                                const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                                const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q22iChecked && fQ22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-                            } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                                const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                                const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (fQ29iChecked && Q22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-                            }
-                        } else if (columnB === 'personal_car' || columnB === 'personal_2-wheeler' || columnB === 'drop-off') {
-                            if (columnF === 'walk' || columnF === 'bicycle') {
-                                const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                                const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q29iChecked && fQ13iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-                            } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                                const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                                const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q29iChecked && fQ22iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-                            } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                                const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                                const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                                const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                                if (Q29iChecked && fQ29iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                    document.querySelector('.form-second').style.display = 'none';
-                                    document.querySelector('.form-third').style.display = 'block';
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
-
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-                        } else {
-                            alert('Please fillup the all field');
-                        }
-
-                    } else {
-                        alert('Please fillup the all field');
-                    }
-                } else {
-                    if (columnB === 'walk' || columnB === 'bicycle') {
-                        if (columnF === 'walk' || columnF === 'bicycle') {
-
-                            const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q13ichecked && fQ13iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-
-                        } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                            const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
-                            const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q13iChecked && fQ22iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-
-                        } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                            const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
-                            const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q13iChecked && fQ29iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-
-                        }
-
-                    } else if (columnB === 'auto' || columnB === 'auto_app' || columnB === 'cab(app)' || columnB === 'cab' || columnB === '2-Wheeler(app)') {
-                        if (columnF === 'walk' || columnF === 'bicycle') {
-                            const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                            const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q22iChecked && fQ13iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-
-                        } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                            const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                            const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q22iChecked && fQ22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-                        } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                            const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                            const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (fQ29iChecked && Q22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-                        }
-                    } else if (columnB === 'personal_car' || columnB === 'personal_2-wheeler' || columnB === 'drop-off') {
-                        if (columnF === 'walk' || columnF === 'bicycle') {
-                            const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                            const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q29iChecked && fQ13iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-                        } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
-                            const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                            const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q29iChecked && fQ22iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-                        } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
-                            const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
-                            const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
-                            const travel_work = document.querySelector('input[name="travel_work"]:checked');
-                            if (Q29iChecked && fQ29iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
-                                document.querySelector('.form-second').style.display = 'none';
-                                document.querySelector('.form-third').style.display = 'block';
-                            } else {
-                                alert('Please fillup the all field');
-                            }
-
-                        } else {
-                            alert('Please fillup the all field');
-                        }
-                    } else {
-                        alert('Please fillup the all field');
-                    }
-
-                }
-
-            } else {
-                alert('Please fillup the all field');
-            }
+            /* if (travel_work && travel_partner && travel_purpose && travel_11 && Q34 && Q35 && Q36 && Q37 && Q38 && Q39 && Q40 && originType && startingTime && duration && transportation && waitingTime && cToe && waitingTimeE && durationf && ftransportation && destinationType && endTime) {
+                 const Q40check = document.querySelector('input[name="Q40"]:checked').value;
+                 if (Q40check === '1') {
+                     if (Q40a && Q40b) {
+                         if (columnB === 'walk' || columnB === 'bicycle') {
+                             if (columnF === 'walk' || columnF === 'bicycle') {
+ 
+                                 const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q13ichecked && fQ13iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+ 
+                             } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                                 const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
+                                 const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q13iChecked && fQ22iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+ 
+                             } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                                 const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
+                                 const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q13iChecked && fQ29iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+ 
+                             }
+ 
+                         } else if (columnB === 'auto' || columnB === 'auto_app' || columnB === 'cab(app)' || columnB === 'cab' || columnB === '2-Wheeler(app)') {
+                             if (columnF === 'walk' || columnF === 'bicycle') {
+                                 const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                                 const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q22iChecked && fQ13iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+ 
+                             } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                                 const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                                 const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q22iChecked && fQ22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+                             } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                                 const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                                 const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (fQ29iChecked && Q22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+                             }
+                         } else if (columnB === 'personal_car' || columnB === 'personal_2-wheeler' || columnB === 'drop-off') {
+                             if (columnF === 'walk' || columnF === 'bicycle') {
+                                 const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                                 const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q29iChecked && fQ13iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+                             } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                                 const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                                 const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q29iChecked && fQ22iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+                             } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                                 const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                                 const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                                 const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                                 if (Q29iChecked && fQ29iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                     document.querySelector('.form-second').style.display = 'none';
+                                     document.querySelector('.form-third').style.display = 'block';
+                                 } else {
+                                     alert('Please fillup the all field');
+                                 }
+ 
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+                         } else {
+                             alert('Please fillup the all field');
+                         }
+ 
+                     } else {
+                         alert('Please fillup the all field');
+                     }
+                 } else {
+                     if (columnB === 'walk' || columnB === 'bicycle') {
+                         if (columnF === 'walk' || columnF === 'bicycle') {
+ 
+                             const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q13ichecked && fQ13iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+ 
+                         } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                             const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
+                             const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q13iChecked && fQ22iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+ 
+                         } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                             const Q13iChecked = document.querySelector('input[name="Q13i"]:checked');
+                             const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q13iChecked && fQ29iChecked && travel_work && Q13schecked && Q14ichecked && Q14schecked && Q15ichecked && Q15schecked && Q16ichecked && Q16schecked && Q17ichecked && Q17schecked && Q18ichecked && Q18schecked && Q19ichecked && Q19schecked && Q20ichecked && Q20schecked && Q21ichecked && Q21schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+ 
+                         }
+ 
+                     } else if (columnB === 'auto' || columnB === 'auto_app' || columnB === 'cab(app)' || columnB === 'cab' || columnB === '2-Wheeler(app)') {
+                         if (columnF === 'walk' || columnF === 'bicycle') {
+                             const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                             const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q22iChecked && fQ13iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+ 
+                         } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                             const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                             const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q22iChecked && fQ22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+                         } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                             const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                             const Q22iChecked = document.querySelector('input[name="Q22i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (fQ29iChecked && Q22iChecked && travel_work && Q22schecked && Q23ichecked && Q23schecked && Q24ichecked && Q24schecked && Q25ichecked && Q25schecked && Q26ichecked && Q26schecked && Q27ichecked && Q27schecked && Q28ichecked && Q28schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+                         }
+                     } else if (columnB === 'personal_car' || columnB === 'personal_2-wheeler' || columnB === 'drop-off') {
+                         if (columnF === 'walk' || columnF === 'bicycle') {
+                             const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                             const fQ13iChecked = document.querySelector('input[name="fQ13i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q29iChecked && fQ13iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ13schecked && fQ14ichecked && fQ14schecked && fQ15ichecked && fQ15schecked && fQ16ichecked && fQ16schecked && fQ17ichecked && fQ17schecked && fQ18ichecked && fQ18schecked && fQ19ichecked && fQ19schecked && fQ20ichecked && fQ20schecked && fQ21ichecked && fQ21schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+                         } else if (columnF === 'auto' || columnF === 'auto_app' || columnF === 'cab(app)' || columnF === 'cab' || columnF === '2-wheeler(app)') {
+                             const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                             const fQ22iChecked = document.querySelector('input[name="fQ22i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q29iChecked && fQ22iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ22schecked && fQ23ichecked && fQ23schecked && fQ24ichecked && fQ24schecked && fQ25ichecked && fQ25schecked && fQ26ichecked && fQ26schecked && fQ27ichecked && fQ27schecked && fQ28ichecked && fQ28schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+                         } else if (columnF === 'personal_car' || columnF === 'personal_2-wheeler' || columnF === 'drop-off') {
+                             const Q29iChecked = document.querySelector('input[name="Q29i"]:checked');
+                             const fQ29iChecked = document.querySelector('input[name="fQ29i"]:checked');
+                             const travel_work = document.querySelector('input[name="travel_work"]:checked');
+                             if (Q29iChecked && fQ29iChecked && travel_work && Q29schecked && Q30ichecked && Q30schecked && Q31ichecked && Q31schecked && Q32ichecked && Q32schecked && Q33ichecked && Q33schecked && fQ29schecked && fQ30ichecked && fQ30schecked && fQ31ichecked && fQ31schecked && fQ32ichecked && fQ32schecked && fQ33ichecked && fQ33schecked) {
+                                 document.querySelector('.form-second').style.display = 'none';
+                                 document.querySelector('.form-third').style.display = 'block';
+                             } else {
+                                 alert('Please fillup the all field');
+                             }
+ 
+                         } else {
+                             alert('Please fillup the all field');
+                         }
+                     } else {
+                         alert('Please fillup the all field');
+                     }
+ 
+                 }
+ 
+             } else {
+                 alert('Please fillup the all field');
+             }*/
 
         });
 
@@ -2656,12 +2638,11 @@
 
         let StartdateTime = '';
 
-        document.querySelectorAll('input[name="gender"]').forEach(function (genderInput) {
-            genderInput.addEventListener('change', function () {
-                // Set the StartdateTime when the user selects a gender
-                StartdateTime = getCurrentDateTime();
-            });
+        document.querySelector('input[name="ename"]').addEventListener('change', function () {
+            // Set the StartdateTime when the user selects a gender
+            StartdateTime = getCurrentDateTime();
         });
+
 
 
 
@@ -2682,695 +2663,344 @@
                         const userConfirmation = window.confirm('Are you sure you want to submit the data?');
 
                         const smartphone = document.querySelector('input[name="smartPhone"]:checked');
-                        if (smartphone) {
-                            if (smartphone.value === '1') {
-                                const data_package = document.querySelector('input[name="data_package"]:checked');
-                                const Q41 = document.querySelector('input[name="Q41"]:checked');
-                                const Q42 = document.querySelector('input[name="Q42"]:checked');
-                                const Q43 = document.querySelector('input[name="Q43"]:checked');
-                                const Q44 = document.querySelector('input[name="Q44"]:checked');
-                                const Q45 = document.querySelector('input[name="Q45"]:checked');
-                                if (data_package && Q41 && Q42 && Q43 && Q44 && Q45) {
-                                    if (userConfirmation) {
-                                        // Collect form data
-                                        const ename = document.querySelector('input[name="ename"]').value;
-                                        const route = document.querySelector('input[name="route"]').value;
-                                        const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
-                                        const age = document.querySelector('input[name="age"]:checked') ? document.querySelector('input[name="age"]:checked').value : '';
-                                        const income = document.querySelector('input[name="income"]:checked') ? document.querySelector('input[name="income"]:checked').value : '';
-                                        const employment = document.querySelector('input[name="employment"]:checked') ? document.querySelector('input[name="employment"]:checked').value : '';
-                                        const education = document.querySelector('input[name="education"]:checked') ? document.querySelector('input[name="education"]:checked').value : '';
-                                        const origin_area = document.querySelector('input[name="origin_area"]').value;
-                                        const origin_pin = document.querySelector('input[name="origin_pin"]').value;
-                                        const destination_area = document.querySelector('input[name="destination_area"]').value;
-                                        const destination_pin = document.querySelector('input[name="destination_pin"]').value;
-                                        const city = document.querySelector('input[name="city"]:checked') ? document.querySelector('input[name="city"]:checked').value : '';
-                                        const travel_work = document.querySelector('input[name="travel_work"]:checked') ? document.querySelector('input[name="travel_work"]:checked').value : '';
-                                        const travel_partner = document.querySelector('input[name="travel_partner"]:checked') ? document.querySelector('input[name="travel_partner"]:checked').value : '';
-                                        const travel_purpose = document.querySelector('input[name="travel_purpose"]:checked') ? document.querySelector('input[name="travel_purpose"]:checked').value : '';
-                                        const travel_11 = document.querySelector('input[name="travel_11"]:checked') ? document.querySelector('input[name="travel_11"]:checked').value : '';
-                                        //This is for image section
-                                        const originType = document.querySelector('input[name="originType"]').value;
-                                        const startingTime = document.querySelector('input[name="startingTime"]').value;
-                                        const duration = document.querySelector('input[name="duration"]').value;
-                                        const transportation = document.querySelector('input[name="transportation"]:checked') ? document.querySelector('input[name="transportation"]:checked').value : '';
-                                        const waitingTime = document.querySelector('input[name="waitingTime"]').value;
-                                        const cToe = document.querySelector('input[name="cToe"]:checked') ? document.querySelector('input[name="cToe"]:checked').value : '';
-                                        const waitingTimeE = document.querySelector('input[name="waitingTimeE"]').value;
-                                        const durationf = document.querySelector('input[name="durationf"]').value;
-                                        const ftransportation = document.querySelector('input[name="ftransportation"]:checked') ? document.querySelector('input[name="ftransportation"]:checked').value : '';
-                                        const destinationType = document.querySelector('input[name="destinationType"]').value;
-                                        const endTime = document.querySelector('input[name="endTime"]').value;
-                                        const Q13i = document.querySelector('input[name="Q13i"]:checked') ? document.querySelector('input[name="Q13i"]:checked').value : '';
-                                        const Q13s = document.querySelector('input[name="Q13s"]:checked') ? document.querySelector('input[name="Q13s"]:checked').value : '';
-                                        const Q14i = document.querySelector('input[name="Q14i"]:checked') ? document.querySelector('input[name="Q14i"]:checked').value : '';
-                                        const Q14s = document.querySelector('input[name="Q14s"]:checked') ? document.querySelector('input[name="Q14s"]:checked').value : '';
-                                        const Q15i = document.querySelector('input[name="Q15i"]:checked') ? document.querySelector('input[name="Q15i"]:checked').value : '';
-                                        const Q15s = document.querySelector('input[name="Q15s"]:checked') ? document.querySelector('input[name="Q15s"]:checked').value : '';
-                                        const Q16i = document.querySelector('input[name="Q16i"]:checked') ? document.querySelector('input[name="Q16i"]:checked').value : '';
-                                        const Q16s = document.querySelector('input[name="Q16s"]:checked') ? document.querySelector('input[name="Q16s"]:checked').value : '';
-                                        const Q17i = document.querySelector('input[name="Q17i"]:checked') ? document.querySelector('input[name="Q17i"]:checked').value : '';
-                                        const Q17s = document.querySelector('input[name="Q17s"]:checked') ? document.querySelector('input[name="Q17s"]:checked').value : '';
-                                        const Q18i = document.querySelector('input[name="Q18i"]:checked') ? document.querySelector('input[name="Q18i"]:checked').value : '';
-                                        const Q18s = document.querySelector('input[name="Q18s"]:checked') ? document.querySelector('input[name="Q18s"]:checked').value : '';
-                                        const Q19i = document.querySelector('input[name="Q19i"]:checked') ? document.querySelector('input[name="Q19i"]:checked').value : '';
-                                        const Q19s = document.querySelector('input[name="Q19s"]:checked') ? document.querySelector('input[name="Q19s"]:checked').value : '';
-                                        const Q20i = document.querySelector('input[name="Q20i"]:checked') ? document.querySelector('input[name="Q20i"]:checked').value : '';
-                                        const Q20s = document.querySelector('input[name="Q20s"]:checked') ? document.querySelector('input[name="Q20s"]:checked').value : '';
-                                        const Q21i = document.querySelector('input[name="Q21i"]:checked') ? document.querySelector('input[name="Q21i"]:checked').value : '';
-                                        const Q21s = document.querySelector('input[name="Q21s"]:checked') ? document.querySelector('input[name="Q21s"]:checked').value : '';
-                                        const Q22i = document.querySelector('input[name="Q22i"]:checked') ? document.querySelector('input[name="Q22i"]:checked').value : '';
-                                        const Q22s = document.querySelector('input[name="Q22s"]:checked') ? document.querySelector('input[name="Q22s"]:checked').value : '';
-                                        const Q23i = document.querySelector('input[name="Q23i"]:checked') ? document.querySelector('input[name="Q23i"]:checked').value : '';
-                                        const Q23s = document.querySelector('input[name="Q23s"]:checked') ? document.querySelector('input[name="Q23s"]:checked').value : '';
-                                        const Q24i = document.querySelector('input[name="Q24i"]:checked') ? document.querySelector('input[name="Q24i"]:checked').value : '';
-                                        const Q24s = document.querySelector('input[name="Q24s"]:checked') ? document.querySelector('input[name="Q24s"]:checked').value : '';
-                                        const Q25i = document.querySelector('input[name="Q25i"]:checked') ? document.querySelector('input[name="Q25i"]:checked').value : '';
-                                        const Q25s = document.querySelector('input[name="Q25s"]:checked') ? document.querySelector('input[name="Q25s"]:checked').value : '';
-                                        const Q26i = document.querySelector('input[name="Q26i"]:checked') ? document.querySelector('input[name="Q26i"]:checked').value : '';
-                                        const Q26s = document.querySelector('input[name="Q26s"]:checked') ? document.querySelector('input[name="Q26s"]:checked').value : '';
-                                        const Q27i = document.querySelector('input[name="Q27i"]:checked') ? document.querySelector('input[name="Q27i"]:checked').value : '';
-                                        const Q27s = document.querySelector('input[name="Q27s"]:checked') ? document.querySelector('input[name="Q27s"]:checked').value : '';
-                                        const Q28i = document.querySelector('input[name="Q28i"]:checked') ? document.querySelector('input[name="Q28i"]:checked').value : '';
-                                        const Q28s = document.querySelector('input[name="Q28s"]:checked') ? document.querySelector('input[name="Q28s"]:checked').value : '';
-                                        const Q29i = document.querySelector('input[name="Q29i"]:checked') ? document.querySelector('input[name="Q29i"]:checked').value : '';
-                                        const Q29s = document.querySelector('input[name="Q29s"]:checked') ? document.querySelector('input[name="Q29s"]:checked').value : '';
-                                        const Q30i = document.querySelector('input[name="Q30i"]:checked') ? document.querySelector('input[name="Q30i"]:checked').value : '';
-                                        const Q30s = document.querySelector('input[name="Q30s"]:checked') ? document.querySelector('input[name="Q30s"]:checked').value : '';
-                                        const Q31i = document.querySelector('input[name="Q31i"]:checked') ? document.querySelector('input[name="Q31i"]:checked').value : '';
-                                        const Q31s = document.querySelector('input[name="Q31s"]:checked') ? document.querySelector('input[name="Q31s"]:checked').value : '';
-                                        const Q32i = document.querySelector('input[name="Q32i"]:checked') ? document.querySelector('input[name="Q32i"]:checked').value : '';
-                                        const Q32s = document.querySelector('input[name="Q32s"]:checked') ? document.querySelector('input[name="Q32s"]:checked').value : '';
-                                        const Q33i = document.querySelector('input[name="Q33i"]:checked') ? document.querySelector('input[name="Q33i"]:checked').value : '';
-                                        const Q33s = document.querySelector('input[name="Q33s"]:checked') ? document.querySelector('input[name="Q33s"]:checked').value : '';
 
-                                        //This is for f cloumn
+                        if (userConfirmation) {
+                            // Collect form data
+                            const ename = document.querySelector('input[name="ename"]').value;
+                            const route = document.querySelector('input[name="route"]').value;
+                            const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+                            const age = document.querySelector('input[name="age"]:checked') ? document.querySelector('input[name="age"]:checked').value : '';
+                            const income = document.querySelector('input[name="income"]:checked') ? document.querySelector('input[name="income"]:checked').value : '';
+                            const employment = document.querySelector('input[name="employment"]:checked') ? document.querySelector('input[name="employment"]:checked').value : '';
+                            const education = document.querySelector('input[name="education"]:checked') ? document.querySelector('input[name="education"]:checked').value : '';
+                            const origin_area = document.querySelector('input[name="origin_area"]').value;
+                            const origin_pin = document.querySelector('input[name="origin_pin"]').value;
+                            const destination_area = document.querySelector('input[name="destination_area"]').value;
+                            const destination_pin = document.querySelector('input[name="destination_pin"]').value;
+                            const city = document.querySelector('input[name="city"]:checked') ? document.querySelector('input[name="city"]:checked').value : '';
+                            const travel_work = document.querySelector('input[name="travel_work"]:checked') ? document.querySelector('input[name="travel_work"]:checked').value : '';
+                            const travel_partner = document.querySelector('input[name="travel_partner"]:checked') ? document.querySelector('input[name="travel_partner"]:checked').value : '';
+                            const travel_purpose = document.querySelector('input[name="travel_purpose"]:checked') ? document.querySelector('input[name="travel_purpose"]:checked').value : '';
+                            const travel_11 = document.querySelector('input[name="travel_11"]:checked') ? document.querySelector('input[name="travel_11"]:checked').value : '';
+                            //This is for image section
+                            const originType = document.querySelector('input[name="originType"]').value;
+                            const startingTime = document.querySelector('input[name="startingTime"]').value;
+                            const duration = document.querySelector('input[name="duration"]').value;
+                            const transportation = document.querySelector('input[name="transportation"]:checked') ? document.querySelector('input[name="transportation"]:checked').value : '';
+                            const waitingTime = document.querySelector('input[name="waitingTime"]').value;
+                            const cToe = document.querySelector('input[name="cToe"]:checked') ? document.querySelector('input[name="cToe"]:checked').value : '';
+                            const waitingTimeE = document.querySelector('input[name="waitingTimeE"]').value;
+                            const durationf = document.querySelector('input[name="durationf"]').value;
+                            const ftransportation = document.querySelector('input[name="ftransportation"]:checked') ? document.querySelector('input[name="ftransportation"]:checked').value : '';
+                            const destinationType = document.querySelector('input[name="destinationType"]').value;
+                            const endTime = document.querySelector('input[name="endTime"]').value;
+                            const Q13i = document.querySelector('input[name="Q13i"]:checked') ? document.querySelector('input[name="Q13i"]:checked').value : '';
+                            const Q13s = document.querySelector('input[name="Q13s"]:checked') ? document.querySelector('input[name="Q13s"]:checked').value : '';
+                            const Q14i = document.querySelector('input[name="Q14i"]:checked') ? document.querySelector('input[name="Q14i"]:checked').value : '';
+                            const Q14s = document.querySelector('input[name="Q14s"]:checked') ? document.querySelector('input[name="Q14s"]:checked').value : '';
+                            const Q15i = document.querySelector('input[name="Q15i"]:checked') ? document.querySelector('input[name="Q15i"]:checked').value : '';
+                            const Q15s = document.querySelector('input[name="Q15s"]:checked') ? document.querySelector('input[name="Q15s"]:checked').value : '';
+                            const Q16i = document.querySelector('input[name="Q16i"]:checked') ? document.querySelector('input[name="Q16i"]:checked').value : '';
+                            const Q16s = document.querySelector('input[name="Q16s"]:checked') ? document.querySelector('input[name="Q16s"]:checked').value : '';
+                            const Q17i = document.querySelector('input[name="Q17i"]:checked') ? document.querySelector('input[name="Q17i"]:checked').value : '';
+                            const Q17s = document.querySelector('input[name="Q17s"]:checked') ? document.querySelector('input[name="Q17s"]:checked').value : '';
+                            const Q18i = document.querySelector('input[name="Q18i"]:checked') ? document.querySelector('input[name="Q18i"]:checked').value : '';
+                            const Q18s = document.querySelector('input[name="Q18s"]:checked') ? document.querySelector('input[name="Q18s"]:checked').value : '';
+                            const Q19i = document.querySelector('input[name="Q19i"]:checked') ? document.querySelector('input[name="Q19i"]:checked').value : '';
+                            const Q19s = document.querySelector('input[name="Q19s"]:checked') ? document.querySelector('input[name="Q19s"]:checked').value : '';
+                            const Q20i = document.querySelector('input[name="Q20i"]:checked') ? document.querySelector('input[name="Q20i"]:checked').value : '';
+                            const Q20s = document.querySelector('input[name="Q20s"]:checked') ? document.querySelector('input[name="Q20s"]:checked').value : '';
+                            const Q21i = document.querySelector('input[name="Q21i"]:checked') ? document.querySelector('input[name="Q21i"]:checked').value : '';
+                            const Q21s = document.querySelector('input[name="Q21s"]:checked') ? document.querySelector('input[name="Q21s"]:checked').value : '';
+                            const Q22i = document.querySelector('input[name="Q22i"]:checked') ? document.querySelector('input[name="Q22i"]:checked').value : '';
+                            const Q22s = document.querySelector('input[name="Q22s"]:checked') ? document.querySelector('input[name="Q22s"]:checked').value : '';
+                            const Q23i = document.querySelector('input[name="Q23i"]:checked') ? document.querySelector('input[name="Q23i"]:checked').value : '';
+                            const Q23s = document.querySelector('input[name="Q23s"]:checked') ? document.querySelector('input[name="Q23s"]:checked').value : '';
+                            const Q24i = document.querySelector('input[name="Q24i"]:checked') ? document.querySelector('input[name="Q24i"]:checked').value : '';
+                            const Q24s = document.querySelector('input[name="Q24s"]:checked') ? document.querySelector('input[name="Q24s"]:checked').value : '';
+                            const Q25i = document.querySelector('input[name="Q25i"]:checked') ? document.querySelector('input[name="Q25i"]:checked').value : '';
+                            const Q25s = document.querySelector('input[name="Q25s"]:checked') ? document.querySelector('input[name="Q25s"]:checked').value : '';
+                            const Q26i = document.querySelector('input[name="Q26i"]:checked') ? document.querySelector('input[name="Q26i"]:checked').value : '';
+                            const Q26s = document.querySelector('input[name="Q26s"]:checked') ? document.querySelector('input[name="Q26s"]:checked').value : '';
+                            const Q27i = document.querySelector('input[name="Q27i"]:checked') ? document.querySelector('input[name="Q27i"]:checked').value : '';
+                            const Q27s = document.querySelector('input[name="Q27s"]:checked') ? document.querySelector('input[name="Q27s"]:checked').value : '';
+                            const Q28i = document.querySelector('input[name="Q28i"]:checked') ? document.querySelector('input[name="Q28i"]:checked').value : '';
+                            const Q28s = document.querySelector('input[name="Q28s"]:checked') ? document.querySelector('input[name="Q28s"]:checked').value : '';
+                            const Q29i = document.querySelector('input[name="Q29i"]:checked') ? document.querySelector('input[name="Q29i"]:checked').value : '';
+                            const Q29s = document.querySelector('input[name="Q29s"]:checked') ? document.querySelector('input[name="Q29s"]:checked').value : '';
+                            const Q30i = document.querySelector('input[name="Q30i"]:checked') ? document.querySelector('input[name="Q30i"]:checked').value : '';
+                            const Q30s = document.querySelector('input[name="Q30s"]:checked') ? document.querySelector('input[name="Q30s"]:checked').value : '';
+                            const Q31i = document.querySelector('input[name="Q31i"]:checked') ? document.querySelector('input[name="Q31i"]:checked').value : '';
+                            const Q31s = document.querySelector('input[name="Q31s"]:checked') ? document.querySelector('input[name="Q31s"]:checked').value : '';
+                            const Q32i = document.querySelector('input[name="Q32i"]:checked') ? document.querySelector('input[name="Q32i"]:checked').value : '';
+                            const Q32s = document.querySelector('input[name="Q32s"]:checked') ? document.querySelector('input[name="Q32s"]:checked').value : '';
+                            const Q33i = document.querySelector('input[name="Q33i"]:checked') ? document.querySelector('input[name="Q33i"]:checked').value : '';
+                            const Q33s = document.querySelector('input[name="Q33s"]:checked') ? document.querySelector('input[name="Q33s"]:checked').value : '';
 
-                                        const fQ13i = document.querySelector('input[name="fQ13i"]:checked') ? document.querySelector('input[name="fQ13i"]:checked').value : '';
-                                        const fQ13s = document.querySelector('input[name="fQ13s"]:checked') ? document.querySelector('input[name="fQ13s"]:checked').value : '';
-                                        const fQ14i = document.querySelector('input[name="fQ14i"]:checked') ? document.querySelector('input[name="fQ14i"]:checked').value : '';
-                                        const fQ14s = document.querySelector('input[name="fQ14s"]:checked') ? document.querySelector('input[name="fQ14s"]:checked').value : '';
-                                        const fQ15i = document.querySelector('input[name="fQ15i"]:checked') ? document.querySelector('input[name="fQ15i"]:checked').value : '';
-                                        const fQ15s = document.querySelector('input[name="fQ15s"]:checked') ? document.querySelector('input[name="fQ15s"]:checked').value : '';
-                                        const fQ16i = document.querySelector('input[name="fQ16i"]:checked') ? document.querySelector('input[name="fQ16i"]:checked').value : '';
-                                        const fQ16s = document.querySelector('input[name="fQ16s"]:checked') ? document.querySelector('input[name="fQ16s"]:checked').value : '';
-                                        const fQ17i = document.querySelector('input[name="fQ17i"]:checked') ? document.querySelector('input[name="fQ17i"]:checked').value : '';
-                                        const fQ17s = document.querySelector('input[name="fQ17s"]:checked') ? document.querySelector('input[name="fQ17s"]:checked').value : '';
-                                        const fQ18i = document.querySelector('input[name="fQ18i"]:checked') ? document.querySelector('input[name="fQ18i"]:checked').value : '';
-                                        const fQ18s = document.querySelector('input[name="fQ18s"]:checked') ? document.querySelector('input[name="fQ18s"]:checked').value : '';
-                                        const fQ19i = document.querySelector('input[name="fQ19i"]:checked') ? document.querySelector('input[name="fQ19i"]:checked').value : '';
-                                        const fQ19s = document.querySelector('input[name="fQ19s"]:checked') ? document.querySelector('input[name="fQ19s"]:checked').value : '';
-                                        const fQ20i = document.querySelector('input[name="fQ20i"]:checked') ? document.querySelector('input[name="fQ20i"]:checked').value : '';
-                                        const fQ20s = document.querySelector('input[name="fQ20s"]:checked') ? document.querySelector('input[name="fQ20s"]:checked').value : '';
-                                        const fQ21i = document.querySelector('input[name="fQ21i"]:checked') ? document.querySelector('input[name="fQ21i"]:checked').value : '';
-                                        const fQ21s = document.querySelector('input[name="fQ21s"]:checked') ? document.querySelector('input[name="fQ21s"]:checked').value : '';
-                                        const fQ22i = document.querySelector('input[name="fQ22i"]:checked') ? document.querySelector('input[name="fQ22i"]:checked').value : '';
-                                        const fQ22s = document.querySelector('input[name="fQ22s"]:checked') ? document.querySelector('input[name="fQ22s"]:checked').value : '';
-                                        const fQ23i = document.querySelector('input[name="fQ23i"]:checked') ? document.querySelector('input[name="fQ23i"]:checked').value : '';
-                                        const fQ23s = document.querySelector('input[name="fQ23s"]:checked') ? document.querySelector('input[name="fQ23s"]:checked').value : '';
-                                        const fQ24i = document.querySelector('input[name="fQ24i"]:checked') ? document.querySelector('input[name="fQ24i"]:checked').value : '';
-                                        const fQ24s = document.querySelector('input[name="fQ24s"]:checked') ? document.querySelector('input[name="fQ24s"]:checked').value : '';
-                                        const fQ25i = document.querySelector('input[name="fQ25i"]:checked') ? document.querySelector('input[name="fQ25i"]:checked').value : '';
-                                        const fQ25s = document.querySelector('input[name="fQ25s"]:checked') ? document.querySelector('input[name="fQ25s"]:checked').value : '';
-                                        const fQ26i = document.querySelector('input[name="fQ26i"]:checked') ? document.querySelector('input[name="fQ26i"]:checked').value : '';
-                                        const fQ26s = document.querySelector('input[name="fQ26s"]:checked') ? document.querySelector('input[name="fQ26s"]:checked').value : '';
-                                        const fQ27i = document.querySelector('input[name="fQ27i"]:checked') ? document.querySelector('input[name="fQ27i"]:checked').value : '';
-                                        const fQ27s = document.querySelector('input[name="fQ27s"]:checked') ? document.querySelector('input[name="fQ27s"]:checked').value : '';
-                                        const fQ28i = document.querySelector('input[name="fQ28i"]:checked') ? document.querySelector('input[name="fQ28i"]:checked').value : '';
-                                        const fQ28s = document.querySelector('input[name="fQ28s"]:checked') ? document.querySelector('input[name="fQ28s"]:checked').value : '';
-                                        const fQ29i = document.querySelector('input[name="fQ29i"]:checked') ? document.querySelector('input[name="fQ29i"]:checked').value : '';
-                                        const fQ29s = document.querySelector('input[name="fQ29s"]:checked') ? document.querySelector('input[name="fQ29s"]:checked').value : '';
-                                        const fQ30i = document.querySelector('input[name="fQ30i"]:checked') ? document.querySelector('input[name="fQ30i"]:checked').value : '';
-                                        const fQ30s = document.querySelector('input[name="fQ30s"]:checked') ? document.querySelector('input[name="fQ30s"]:checked').value : '';
-                                        const fQ31i = document.querySelector('input[name="fQ31i"]:checked') ? document.querySelector('input[name="fQ31i"]:checked').value : '';
-                                        const fQ31s = document.querySelector('input[name="fQ31s"]:checked') ? document.querySelector('input[name="fQ31s"]:checked').value : '';
-                                        const fQ32i = document.querySelector('input[name="fQ32i"]:checked') ? document.querySelector('input[name="fQ32i"]:checked').value : '';
-                                        const fQ32s = document.querySelector('input[name="fQ32s"]:checked') ? document.querySelector('input[name="fQ32s"]:checked').value : '';
-                                        const fQ33i = document.querySelector('input[name="fQ33i"]:checked') ? document.querySelector('input[name="fQ33i"]:checked').value : '';
-                                        const fQ33s = document.querySelector('input[name="fQ33s"]:checked') ? document.querySelector('input[name="fQ33s"]:checked').value : '';
+                            //This is for f cloumn
 
-                                        const Q34 = document.querySelector('input[name="Q34"]:checked') ? document.querySelector('input[name="Q34"]:checked').value : '';
-                                        const Q35 = document.querySelector('input[name="Q35"]:checked') ? document.querySelector('input[name="Q35"]:checked').value : '';
-                                        const Q36 = document.querySelector('input[name="Q36"]:checked') ? document.querySelector('input[name="Q36"]:checked').value : '';
-                                        const Q37 = document.querySelector('input[name="Q37"]:checked') ? document.querySelector('input[name="Q37"]:checked').value : '';
-                                        const Q38 = document.querySelector('input[name="Q38"]:checked') ? document.querySelector('input[name="Q38"]:checked').value : '';
-                                        const Q39 = document.querySelector('input[name="Q39"]:checked') ? document.querySelector('input[name="Q39"]:checked').value : '';
-                                        const Q40 = document.querySelector('input[name="Q40"]:checked') ? document.querySelector('input[name="Q40"]:checked').value : '';
-                                        const Q40a = document.querySelector('input[name="Q40a"]:checked') ? document.querySelector('input[name="Q40a"]:checked').value : '';
-                                        const Q40b = document.querySelector('input[name="Q40b"]:checked') ? document.querySelector('input[name="Q40b"]:checked').value : '';
+                            const fQ13i = document.querySelector('input[name="fQ13i"]:checked') ? document.querySelector('input[name="fQ13i"]:checked').value : '';
+                            const fQ13s = document.querySelector('input[name="fQ13s"]:checked') ? document.querySelector('input[name="fQ13s"]:checked').value : '';
+                            const fQ14i = document.querySelector('input[name="fQ14i"]:checked') ? document.querySelector('input[name="fQ14i"]:checked').value : '';
+                            const fQ14s = document.querySelector('input[name="fQ14s"]:checked') ? document.querySelector('input[name="fQ14s"]:checked').value : '';
+                            const fQ15i = document.querySelector('input[name="fQ15i"]:checked') ? document.querySelector('input[name="fQ15i"]:checked').value : '';
+                            const fQ15s = document.querySelector('input[name="fQ15s"]:checked') ? document.querySelector('input[name="fQ15s"]:checked').value : '';
+                            const fQ16i = document.querySelector('input[name="fQ16i"]:checked') ? document.querySelector('input[name="fQ16i"]:checked').value : '';
+                            const fQ16s = document.querySelector('input[name="fQ16s"]:checked') ? document.querySelector('input[name="fQ16s"]:checked').value : '';
+                            const fQ17i = document.querySelector('input[name="fQ17i"]:checked') ? document.querySelector('input[name="fQ17i"]:checked').value : '';
+                            const fQ17s = document.querySelector('input[name="fQ17s"]:checked') ? document.querySelector('input[name="fQ17s"]:checked').value : '';
+                            const fQ18i = document.querySelector('input[name="fQ18i"]:checked') ? document.querySelector('input[name="fQ18i"]:checked').value : '';
+                            const fQ18s = document.querySelector('input[name="fQ18s"]:checked') ? document.querySelector('input[name="fQ18s"]:checked').value : '';
+                            const fQ19i = document.querySelector('input[name="fQ19i"]:checked') ? document.querySelector('input[name="fQ19i"]:checked').value : '';
+                            const fQ19s = document.querySelector('input[name="fQ19s"]:checked') ? document.querySelector('input[name="fQ19s"]:checked').value : '';
+                            const fQ20i = document.querySelector('input[name="fQ20i"]:checked') ? document.querySelector('input[name="fQ20i"]:checked').value : '';
+                            const fQ20s = document.querySelector('input[name="fQ20s"]:checked') ? document.querySelector('input[name="fQ20s"]:checked').value : '';
+                            const fQ21i = document.querySelector('input[name="fQ21i"]:checked') ? document.querySelector('input[name="fQ21i"]:checked').value : '';
+                            const fQ21s = document.querySelector('input[name="fQ21s"]:checked') ? document.querySelector('input[name="fQ21s"]:checked').value : '';
+                            const fQ22i = document.querySelector('input[name="fQ22i"]:checked') ? document.querySelector('input[name="fQ22i"]:checked').value : '';
+                            const fQ22s = document.querySelector('input[name="fQ22s"]:checked') ? document.querySelector('input[name="fQ22s"]:checked').value : '';
+                            const fQ23i = document.querySelector('input[name="fQ23i"]:checked') ? document.querySelector('input[name="fQ23i"]:checked').value : '';
+                            const fQ23s = document.querySelector('input[name="fQ23s"]:checked') ? document.querySelector('input[name="fQ23s"]:checked').value : '';
+                            const fQ24i = document.querySelector('input[name="fQ24i"]:checked') ? document.querySelector('input[name="fQ24i"]:checked').value : '';
+                            const fQ24s = document.querySelector('input[name="fQ24s"]:checked') ? document.querySelector('input[name="fQ24s"]:checked').value : '';
+                            const fQ25i = document.querySelector('input[name="fQ25i"]:checked') ? document.querySelector('input[name="fQ25i"]:checked').value : '';
+                            const fQ25s = document.querySelector('input[name="fQ25s"]:checked') ? document.querySelector('input[name="fQ25s"]:checked').value : '';
+                            const fQ26i = document.querySelector('input[name="fQ26i"]:checked') ? document.querySelector('input[name="fQ26i"]:checked').value : '';
+                            const fQ26s = document.querySelector('input[name="fQ26s"]:checked') ? document.querySelector('input[name="fQ26s"]:checked').value : '';
+                            const fQ27i = document.querySelector('input[name="fQ27i"]:checked') ? document.querySelector('input[name="fQ27i"]:checked').value : '';
+                            const fQ27s = document.querySelector('input[name="fQ27s"]:checked') ? document.querySelector('input[name="fQ27s"]:checked').value : '';
+                            const fQ28i = document.querySelector('input[name="fQ28i"]:checked') ? document.querySelector('input[name="fQ28i"]:checked').value : '';
+                            const fQ28s = document.querySelector('input[name="fQ28s"]:checked') ? document.querySelector('input[name="fQ28s"]:checked').value : '';
+                            const fQ29i = document.querySelector('input[name="fQ29i"]:checked') ? document.querySelector('input[name="fQ29i"]:checked').value : '';
+                            const fQ29s = document.querySelector('input[name="fQ29s"]:checked') ? document.querySelector('input[name="fQ29s"]:checked').value : '';
+                            const fQ30i = document.querySelector('input[name="fQ30i"]:checked') ? document.querySelector('input[name="fQ30i"]:checked').value : '';
+                            const fQ30s = document.querySelector('input[name="fQ30s"]:checked') ? document.querySelector('input[name="fQ30s"]:checked').value : '';
+                            const fQ31i = document.querySelector('input[name="fQ31i"]:checked') ? document.querySelector('input[name="fQ31i"]:checked').value : '';
+                            const fQ31s = document.querySelector('input[name="fQ31s"]:checked') ? document.querySelector('input[name="fQ31s"]:checked').value : '';
+                            const fQ32i = document.querySelector('input[name="fQ32i"]:checked') ? document.querySelector('input[name="fQ32i"]:checked').value : '';
+                            const fQ32s = document.querySelector('input[name="fQ32s"]:checked') ? document.querySelector('input[name="fQ32s"]:checked').value : '';
+                            const fQ33i = document.querySelector('input[name="fQ33i"]:checked') ? document.querySelector('input[name="fQ33i"]:checked').value : '';
+                            const fQ33s = document.querySelector('input[name="fQ33s"]:checked') ? document.querySelector('input[name="fQ33s"]:checked').value : '';
 
-                                        /*This is for section c*/
+                            const Q34 = document.querySelector('input[name="Q34"]:checked') ? document.querySelector('input[name="Q34"]:checked').value : '';
+                            const Q35 = document.querySelector('input[name="Q35"]:checked') ? document.querySelector('input[name="Q35"]:checked').value : '';
+                            const Q36 = document.querySelector('input[name="Q36"]:checked') ? document.querySelector('input[name="Q36"]:checked').value : '';
+                            const Q37 = document.querySelector('input[name="Q37"]:checked') ? document.querySelector('input[name="Q37"]:checked').value : '';
+                            const Q38 = document.querySelector('input[name="Q38"]:checked') ? document.querySelector('input[name="Q38"]:checked').value : '';
+                            const Q39 = document.querySelector('input[name="Q39"]:checked') ? document.querySelector('input[name="Q39"]:checked').value : '';
+                            const Q40 = document.querySelector('input[name="Q40"]:checked') ? document.querySelector('input[name="Q40"]:checked').value : '';
+                            const Q40a = document.querySelector('input[name="Q40a"]:checked') ? document.querySelector('input[name="Q40a"]:checked').value : '';
+                            const Q40b = document.querySelector('input[name="Q40b"]:checked') ? document.querySelector('input[name="Q40b"]:checked').value : '';
 
-                                        const smartphone = document.querySelector('input[name="smartPhone"]:checked') ? document.querySelector('input[name="smartPhone"]:checked').value : '';
-                                        const data_package = document.querySelector('input[name="data_package"]:checked') ? document.querySelector('input[name="data_package"]:checked').value : '';
-                                        const Q41 = document.querySelector('input[name="Q41"]:checked') ? document.querySelector('input[name="Q41"]:checked').value : '';
-                                        const Q42 = document.querySelector('input[name="Q42"]:checked') ? document.querySelector('input[name="Q42"]:checked').value : '';
-                                        const Q43 = document.querySelector('input[name="Q43"]:checked') ? document.querySelector('input[name="Q43"]:checked').value : '';
-                                        const Q44 = document.querySelector('input[name="Q44"]:checked') ? document.querySelector('input[name="Q44"]:checked').value : '';
-                                        const Q45 = document.querySelector('input[name="Q45"]:checked') ? document.querySelector('input[name="Q45"]:checked').value : '';
+                            /*This is for section c*/
 
-                                        const o1i = document.querySelector('input[name="o1i"]:checked') ? document.querySelector('input[name="o1i"]:checked').value : '';
-                                        const o1s = document.querySelector('input[name="o1s"]:checked') ? document.querySelector('input[name="o1s"]:checked').value : '';
-                                        const o2i = document.querySelector('input[name="o2i"]:checked') ? document.querySelector('input[name="o2i"]:checked').value : '';
-                                        const o2s = document.querySelector('input[name="o2s"]:checked') ? document.querySelector('input[name="o2s"]:checked').value : '';
-                                        const o3i = document.querySelector('input[name="o3i"]:checked') ? document.querySelector('input[name="o3i"]:checked').value : '';
-                                        const o3s = document.querySelector('input[name="o3s"]:checked') ? document.querySelector('input[name="o3s"]:checked').value : '';
-                                        const o4i = document.querySelector('input[name="o4i"]:checked') ? document.querySelector('input[name="o4i"]:checked').value : '';
-                                        const o4s = document.querySelector('input[name="o4s"]:checked') ? document.querySelector('input[name="o4s"]:checked').value : '';
-                                        const o5i = document.querySelector('input[name="o5i"]:checked') ? document.querySelector('input[name="o5i"]:checked').value : '';
-                                        const o5s = document.querySelector('input[name="o5s"]:checked') ? document.querySelector('input[name="o5s"]:checked').value : '';
-                                        const o6i = document.querySelector('input[name="o6i"]:checked') ? document.querySelector('input[name="o6i"]:checked').value : '';
-                                        const o6s = document.querySelector('input[name="o6s"]:checked') ? document.querySelector('input[name="o6s"]:checked').value : '';
-                                        const o7i = document.querySelector('input[name="o7i"]:checked') ? document.querySelector('input[name="o7i"]:checked').value : '';
-                                        const o7s = document.querySelector('input[name="o7s"]:checked') ? document.querySelector('input[name="o7s"]:checked').value : '';
+                            const smartphone = document.querySelector('input[name="smartPhone"]:checked') ? document.querySelector('input[name="smartPhone"]:checked').value : '';
+                            const data_package = document.querySelector('input[name="data_package"]:checked') ? document.querySelector('input[name="data_package"]:checked').value : '';
+                            const Q41 = document.querySelector('input[name="Q41"]:checked') ? document.querySelector('input[name="Q41"]:checked').value : '';
+                            const Q42 = document.querySelector('input[name="Q42"]:checked') ? document.querySelector('input[name="Q42"]:checked').value : '';
+                            const Q43 = document.querySelector('input[name="Q43"]:checked') ? document.querySelector('input[name="Q43"]:checked').value : '';
+                            const Q44 = document.querySelector('input[name="Q44"]:checked') ? document.querySelector('input[name="Q44"]:checked').value : '';
+                            const Q45 = document.querySelector('input[name="Q45"]:checked') ? document.querySelector('input[name="Q45"]:checked').value : '';
+
+                            const o1i = document.querySelector('input[name="o1i"]:checked') ? document.querySelector('input[name="o1i"]:checked').value : '';
+                            const o1s = document.querySelector('input[name="o1s"]:checked') ? document.querySelector('input[name="o1s"]:checked').value : '';
+                            const o2i = document.querySelector('input[name="o2i"]:checked') ? document.querySelector('input[name="o2i"]:checked').value : '';
+                            const o2s = document.querySelector('input[name="o2s"]:checked') ? document.querySelector('input[name="o2s"]:checked').value : '';
+                            const o3i = document.querySelector('input[name="o3i"]:checked') ? document.querySelector('input[name="o3i"]:checked').value : '';
+                            const o3s = document.querySelector('input[name="o3s"]:checked') ? document.querySelector('input[name="o3s"]:checked').value : '';
+                            const o4i = document.querySelector('input[name="o4i"]:checked') ? document.querySelector('input[name="o4i"]:checked').value : '';
+                            const o4s = document.querySelector('input[name="o4s"]:checked') ? document.querySelector('input[name="o4s"]:checked').value : '';
+                            const o5i = document.querySelector('input[name="o5i"]:checked') ? document.querySelector('input[name="o5i"]:checked').value : '';
+                            const o5s = document.querySelector('input[name="o5s"]:checked') ? document.querySelector('input[name="o5s"]:checked').value : '';
+                            const o6i = document.querySelector('input[name="o6i"]:checked') ? document.querySelector('input[name="o6i"]:checked').value : '';
+                            const o6s = document.querySelector('input[name="o6s"]:checked') ? document.querySelector('input[name="o6s"]:checked').value : '';
+                            const o7i = document.querySelector('input[name="o7i"]:checked') ? document.querySelector('input[name="o7i"]:checked').value : '';
+                            const o7s = document.querySelector('input[name="o7s"]:checked') ? document.querySelector('input[name="o7s"]:checked').value : '';
 
 
-                                        const otherTravelText = document.getElementById('OtherTravelPartner').value;
-                                        const otherPurposeText = document.getElementById('OtherTravelPurpose').value;
+                            const otherTravelText = document.getElementById('OtherTravelPartner').value;
+                            const otherPurposeText = document.getElementById('OtherTravelPurpose').value;
 
 
 
-                                        // Get the currenQ13
-                                        const dateTime = getCurrentDateTime();
+                            // Get the currenQ13
+                            const dateTime = getCurrentDateTime();
 
-                                        // Create an object with the form data, including geolocation data
-                                        const formDataObject = {
-                                            Ename: ename,
-                                            Route: route,
-                                            Gender: gender,
-                                            Age: age,
-                                            Income: income,
-                                            Employment: employment,
-                                            Education: education,
-                                            OriginArea: origin_area,
-                                            OriginPin: origin_pin,
-                                            DestinationArea: destination_area,
-                                            DestinationPin: destination_pin,
-                                            City: city,
-                                            Latitude: latitude,
-                                            Longitude: longitude,
-                                            TravelWork: travel_work,
-                                            TravelPartner: travel_partner === '5' ? otherTravelText : travel_partner,
-                                            TravelPurpose: travel_purpose === '5' ? otherPurposeText : travel_purpose,
-                                            Travel11: travel_11,
-                                            /*This is for image*/
-                                            OriginType: originType,
-                                            StartingTime: startingTime,
-                                            Duration: duration,
-                                            Transportation: transportation,
-                                            WaitingTime: waitingTime,
-                                            CToe: cToe,
-                                            WaitingTimeE: waitingTimeE,
-                                            Durationf: durationf,
-                                            Ftransportation: ftransportation,
-                                            DestinationType: destinationType,
-                                            EndTime: endTime,
-                                            Q13i: Q13i,
-                                            Q13s: Q13s,
-                                            Q14i: Q14i,
-                                            Q14s: Q14s,
-                                            Q15i: Q15i,
-                                            Q15s: Q15s,
-                                            Q16i: Q16i,
-                                            Q16s: Q16s,
-                                            Q17i: Q17i,
-                                            Q17s: Q17s,
-                                            Q18i: Q18i,
-                                            Q18s: Q18s,
-                                            Q19i: Q19i,
-                                            Q19s: Q19s,
-                                            Q20i: Q20i,
-                                            Q20s: Q20s,
-                                            Q21i: Q21i,
-                                            Q21s: Q21s,
-                                            Q22i: Q22i,
-                                            Q22s: Q22s,
-                                            Q23i: Q23i,
-                                            Q23s: Q23s,
-                                            Q24i: Q24i,
-                                            Q24s: Q24s,
-                                            Q25i: Q25i,
-                                            Q25s: Q25s,
-                                            Q26i: Q26i,
-                                            Q26s: Q26s,
-                                            Q27i: Q27i,
-                                            Q27s: Q27s,
-                                            Q28i: Q28i,
-                                            Q28s: Q28s,
-                                            Q29i: Q29i,
-                                            Q29s: Q29s,
-                                            Q30i: Q30i,
-                                            Q30s: Q30s,
-                                            Q30i: Q30i,
-                                            Q30s: Q30s,
-                                            Q31i: Q31i,
-                                            Q31s: Q31s,
-                                            Q32i: Q32i,
-                                            Q32s: Q32s,
-                                            Q33i: Q33i,
-                                            Q33s: Q33s,
-                                            fQ13i: fQ13i,
-                                            fQ13s: fQ13s,
-                                            fQ14i: fQ14i,
-                                            fQ14s: fQ14s,
-                                            fQ15i: fQ15i,
-                                            fQ15s: fQ15s,
-                                            fQ16i: fQ16i,
-                                            fQ16s: fQ16s,
-                                            fQ17i: fQ17i,
-                                            fQ17s: fQ17s,
-                                            fQ18i: fQ18i,
-                                            fQ18s: fQ18s,
-                                            fQ19i: fQ19i,
-                                            fQ19s: fQ19s,
-                                            fQ20i: fQ20i,
-                                            fQ20s: fQ20s,
-                                            fQ21i: fQ21i,
-                                            fQ21s: fQ21s,
-                                            fQ22i: fQ22i,
-                                            fQ22s: fQ22s,
-                                            fQ23i: fQ23i,
-                                            fQ23s: fQ23s,
-                                            fQ24i: fQ24i,
-                                            fQ24s: fQ24s,
-                                            fQ25i: fQ25i,
-                                            fQ25s: fQ25s,
-                                            fQ26i: fQ26i,
-                                            fQ26s: fQ26s,
-                                            fQ27i: fQ27i,
-                                            fQ27s: fQ27s,
-                                            fQ28i: fQ28i,
-                                            fQ28s: fQ28s,
-                                            fQ29i: fQ29i,
-                                            fQ29s: fQ29s,
-                                            fQ30i: fQ30i,
-                                            fQ30s: fQ30s,
-                                            fQ30i: fQ30i,
-                                            fQ30s: fQ30s,
-                                            fQ31i: fQ31i,
-                                            fQ31s: fQ31s,
-                                            fQ32i: fQ32i,
-                                            fQ32s: fQ32s,
-                                            fQ33i: fQ33i,
-                                            fQ33s: fQ33s,
-                                            Q34: Q34,
-                                            Q35: Q35,
-                                            Q36: Q36,
-                                            Q37: Q37,
-                                            Q38: Q38,
-                                            Q39: Q39,
-                                            Q40: Q40,
-                                            Q40a: Q40a,
-                                            Q40b: Q40b,
-                                            smartphone: smartphone,
-                                            data_package: data_package,
-                                            Q41: Q41,
-                                            Q42: Q42,
-                                            Q43: Q43,
-                                            Q44: Q44,
-                                            Q45: Q45,
-                                            DateTime: dateTime,
-                                            StartdateTime: StartdateTime,
-                                            o1i: o1i,
-                                            o1s: o1s,
-                                            o2i: o2i,
-                                            o2s: o2s,
-                                            o3i: o3i,
-                                            o3s: o3s,
-                                            o4i: o4i,
-                                            o4s: o4s,
-                                            o5i: o5i,
-                                            o5s: o5s,
-                                            o6i: o6i,
-                                            o6s: o6s,
-                                            o7i: o7i,
-                                            o7s: o7s,
+                            // Create an object with the form data, including geolocation data
+                            const formDataObject = {
+                                Ename: ename,
+                                Route: route,
+                                Gender: gender,
+                                Age: age,
+                                Income: income,
+                                Employment: employment,
+                                Education: education,
+                                OriginArea: origin_area,
+                                OriginPin: origin_pin,
+                                DestinationArea: destination_area,
+                                DestinationPin: destination_pin,
+                                City: city,
+                                Latitude: latitude,
+                                Longitude: longitude,
+                                TravelWork: travel_work,
+                                TravelPartner: travel_partner === '5' ? otherTravelText : travel_partner,
+                                TravelPurpose: travel_purpose === '5' ? otherPurposeText : travel_purpose,
+                                Travel11: travel_11,
+                                /*This is for image*/
+                                OriginType: originType,
+                                StartingTime: startingTime,
+                                Duration: duration,
+                                Transportation: transportation,
+                                WaitingTime: waitingTime,
+                                CToe: cToe,
+                                WaitingTimeE: waitingTimeE,
+                                Durationf: durationf,
+                                Ftransportation: ftransportation,
+                                DestinationType: destinationType,
+                                EndTime: endTime,
+                                Q13i: Q13i,
+                                Q13s: Q13s,
+                                Q14i: Q14i,
+                                Q14s: Q14s,
+                                Q15i: Q15i,
+                                Q15s: Q15s,
+                                Q16i: Q16i,
+                                Q16s: Q16s,
+                                Q17i: Q17i,
+                                Q17s: Q17s,
+                                Q18i: Q18i,
+                                Q18s: Q18s,
+                                Q19i: Q19i,
+                                Q19s: Q19s,
+                                Q20i: Q20i,
+                                Q20s: Q20s,
+                                Q21i: Q21i,
+                                Q21s: Q21s,
+                                Q22i: Q22i,
+                                Q22s: Q22s,
+                                Q23i: Q23i,
+                                Q23s: Q23s,
+                                Q24i: Q24i,
+                                Q24s: Q24s,
+                                Q25i: Q25i,
+                                Q25s: Q25s,
+                                Q26i: Q26i,
+                                Q26s: Q26s,
+                                Q27i: Q27i,
+                                Q27s: Q27s,
+                                Q28i: Q28i,
+                                Q28s: Q28s,
+                                Q29i: Q29i,
+                                Q29s: Q29s,
+                                Q30i: Q30i,
+                                Q30s: Q30s,
+                                Q30i: Q30i,
+                                Q30s: Q30s,
+                                Q31i: Q31i,
+                                Q31s: Q31s,
+                                Q32i: Q32i,
+                                Q32s: Q32s,
+                                Q33i: Q33i,
+                                Q33s: Q33s,
+                                fQ13i: fQ13i,
+                                fQ13s: fQ13s,
+                                fQ14i: fQ14i,
+                                fQ14s: fQ14s,
+                                fQ15i: fQ15i,
+                                fQ15s: fQ15s,
+                                fQ16i: fQ16i,
+                                fQ16s: fQ16s,
+                                fQ17i: fQ17i,
+                                fQ17s: fQ17s,
+                                fQ18i: fQ18i,
+                                fQ18s: fQ18s,
+                                fQ19i: fQ19i,
+                                fQ19s: fQ19s,
+                                fQ20i: fQ20i,
+                                fQ20s: fQ20s,
+                                fQ21i: fQ21i,
+                                fQ21s: fQ21s,
+                                fQ22i: fQ22i,
+                                fQ22s: fQ22s,
+                                fQ23i: fQ23i,
+                                fQ23s: fQ23s,
+                                fQ24i: fQ24i,
+                                fQ24s: fQ24s,
+                                fQ25i: fQ25i,
+                                fQ25s: fQ25s,
+                                fQ26i: fQ26i,
+                                fQ26s: fQ26s,
+                                fQ27i: fQ27i,
+                                fQ27s: fQ27s,
+                                fQ28i: fQ28i,
+                                fQ28s: fQ28s,
+                                fQ29i: fQ29i,
+                                fQ29s: fQ29s,
+                                fQ30i: fQ30i,
+                                fQ30s: fQ30s,
+                                fQ30i: fQ30i,
+                                fQ30s: fQ30s,
+                                fQ31i: fQ31i,
+                                fQ31s: fQ31s,
+                                fQ32i: fQ32i,
+                                fQ32s: fQ32s,
+                                fQ33i: fQ33i,
+                                fQ33s: fQ33s,
+                                Q34: Q34,
+                                Q35: Q35,
+                                Q36: Q36,
+                                Q37: Q37,
+                                Q38: Q38,
+                                Q39: Q39,
+                                Q40: Q40,
+                                Q40a: Q40a,
+                                Q40b: Q40b,
+                                smartphone: smartphone,
+                                data_package: data_package,
+                                Q41: Q41,
+                                Q42: Q42,
+                                Q43: Q43,
+                                Q44: Q44,
+                                Q45: Q45,
+                                DateTime: dateTime,
+                                StartdateTime: StartdateTime,
+                                o1i: o1i,
+                                o1s: o1s,
+                                o2i: o2i,
+                                o2s: o2s,
+                                o3i: o3i,
+                                o3s: o3s,
+                                o4i: o4i,
+                                o4s: o4s,
+                                o5i: o5i,
+                                o5s: o5s,
+                                o6i: o6i,
+                                o6s: o6s,
+                                o7i: o7i,
+                                o7s: o7s,
 
 
 
 
-                                        };
+                            };
 
-                                        // Push the form data to local storage
-                                        if (localStorage.formdata) {
-                                            const existingData = JSON.parse(localStorage.formdata);
-                                            existingData.push(formDataObject);
-                                            localStorage.formdata = JSON.stringify(existingData);
-                                        } else {
-                                            localStorage.formdata = JSON.stringify([formDataObject]);
-                                        }
-
-                                        // Clear the form
-                                        document.querySelector('form').reset();
-
-                                        location.reload();
-                                        window.location.href = "entry.html";
-
-                                    }
-
-                                } else {
-                                    alert('Please fillup the all field');
-                                }
+                            // Push the form data to local storage
+                            if (localStorage.formdata) {
+                                const existingData = JSON.parse(localStorage.formdata);
+                                existingData.push(formDataObject);
+                                localStorage.formdata = JSON.stringify(existingData);
                             } else {
-                                if (userConfirmation) {
-                                    // Collect form data
-                                    const ename = document.querySelector('input[name="ename"]').value;
-                                    const route = document.querySelector('input[name="route"]').value;
-                                    const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
-                                    const age = document.querySelector('input[name="age"]:checked') ? document.querySelector('input[name="age"]:checked').value : '';
-                                    const income = document.querySelector('input[name="income"]:checked') ? document.querySelector('input[name="income"]:checked').value : '';
-                                    const employment = document.querySelector('input[name="employment"]:checked') ? document.querySelector('input[name="employment"]:checked').value : '';
-                                    const education = document.querySelector('input[name="education"]:checked') ? document.querySelector('input[name="education"]:checked').value : '';
-                                    const origin_area = document.querySelector('input[name="origin_area"]').value;
-                                    const origin_pin = document.querySelector('input[name="origin_pin"]').value;
-                                    const destination_area = document.querySelector('input[name="destination_area"]').value;
-                                    const destination_pin = document.querySelector('input[name="destination_pin"]').value;
-                                    const city = document.querySelector('input[name="city"]:checked') ? document.querySelector('input[name="city"]:checked').value : '';
-                                    const travel_work = document.querySelector('input[name="travel_work"]:checked') ? document.querySelector('input[name="travel_work"]:checked').value : '';
-                                    const travel_partner = document.querySelector('input[name="travel_partner"]:checked') ? document.querySelector('input[name="travel_partner"]:checked').value : '';
-                                    const travel_purpose = document.querySelector('input[name="travel_purpose"]:checked') ? document.querySelector('input[name="travel_purpose"]:checked').value : '';
-                                    const travel_11 = document.querySelector('input[name="travel_11"]:checked') ? document.querySelector('input[name="travel_11"]:checked').value : '';
-                                    //This is for image section
-                                    const originType = document.querySelector('input[name="originType"]').value;
-                                    const startingTime = document.querySelector('input[name="startingTime"]').value;
-                                    const duration = document.querySelector('input[name="duration"]').value;
-                                    const transportation = document.querySelector('input[name="transportation"]:checked') ? document.querySelector('input[name="transportation"]:checked').value : '';
-                                    const waitingTime = document.querySelector('input[name="waitingTime"]').value;
-                                    const cToe = document.querySelector('input[name="cToe"]:checked') ? document.querySelector('input[name="cToe"]:checked').value : '';
-                                    const waitingTimeE = document.querySelector('input[name="waitingTimeE"]').value;
-                                    const durationf = document.querySelector('input[name="durationf"]').value;
-                                    const ftransportation = document.querySelector('input[name="ftransportation"]:checked') ? document.querySelector('input[name="ftransportation"]:checked').value : '';
-                                    const destinationType = document.querySelector('input[name="destinationType"]').value;
-                                    const endTime = document.querySelector('input[name="endTime"]').value;
-                                    const Q13i = document.querySelector('input[name="Q13i"]:checked') ? document.querySelector('input[name="Q13i"]:checked').value : '';
-                                    const Q13s = document.querySelector('input[name="Q13s"]:checked') ? document.querySelector('input[name="Q13s"]:checked').value : '';
-                                    const Q14i = document.querySelector('input[name="Q14i"]:checked') ? document.querySelector('input[name="Q14i"]:checked').value : '';
-                                    const Q14s = document.querySelector('input[name="Q14s"]:checked') ? document.querySelector('input[name="Q14s"]:checked').value : '';
-                                    const Q15i = document.querySelector('input[name="Q15i"]:checked') ? document.querySelector('input[name="Q15i"]:checked').value : '';
-                                    const Q15s = document.querySelector('input[name="Q15s"]:checked') ? document.querySelector('input[name="Q15s"]:checked').value : '';
-                                    const Q16i = document.querySelector('input[name="Q16i"]:checked') ? document.querySelector('input[name="Q16i"]:checked').value : '';
-                                    const Q16s = document.querySelector('input[name="Q16s"]:checked') ? document.querySelector('input[name="Q16s"]:checked').value : '';
-                                    const Q17i = document.querySelector('input[name="Q17i"]:checked') ? document.querySelector('input[name="Q17i"]:checked').value : '';
-                                    const Q17s = document.querySelector('input[name="Q17s"]:checked') ? document.querySelector('input[name="Q17s"]:checked').value : '';
-                                    const Q18i = document.querySelector('input[name="Q18i"]:checked') ? document.querySelector('input[name="Q18i"]:checked').value : '';
-                                    const Q18s = document.querySelector('input[name="Q18s"]:checked') ? document.querySelector('input[name="Q18s"]:checked').value : '';
-                                    const Q19i = document.querySelector('input[name="Q19i"]:checked') ? document.querySelector('input[name="Q19i"]:checked').value : '';
-                                    const Q19s = document.querySelector('input[name="Q19s"]:checked') ? document.querySelector('input[name="Q19s"]:checked').value : '';
-                                    const Q20i = document.querySelector('input[name="Q20i"]:checked') ? document.querySelector('input[name="Q20i"]:checked').value : '';
-                                    const Q20s = document.querySelector('input[name="Q20s"]:checked') ? document.querySelector('input[name="Q20s"]:checked').value : '';
-                                    const Q21i = document.querySelector('input[name="Q21i"]:checked') ? document.querySelector('input[name="Q21i"]:checked').value : '';
-                                    const Q21s = document.querySelector('input[name="Q21s"]:checked') ? document.querySelector('input[name="Q21s"]:checked').value : '';
-                                    const Q22i = document.querySelector('input[name="Q22i"]:checked') ? document.querySelector('input[name="Q22i"]:checked').value : '';
-                                    const Q22s = document.querySelector('input[name="Q22s"]:checked') ? document.querySelector('input[name="Q22s"]:checked').value : '';
-                                    const Q23i = document.querySelector('input[name="Q23i"]:checked') ? document.querySelector('input[name="Q23i"]:checked').value : '';
-                                    const Q23s = document.querySelector('input[name="Q23s"]:checked') ? document.querySelector('input[name="Q23s"]:checked').value : '';
-                                    const Q24i = document.querySelector('input[name="Q24i"]:checked') ? document.querySelector('input[name="Q24i"]:checked').value : '';
-                                    const Q24s = document.querySelector('input[name="Q24s"]:checked') ? document.querySelector('input[name="Q24s"]:checked').value : '';
-                                    const Q25i = document.querySelector('input[name="Q25i"]:checked') ? document.querySelector('input[name="Q25i"]:checked').value : '';
-                                    const Q25s = document.querySelector('input[name="Q25s"]:checked') ? document.querySelector('input[name="Q25s"]:checked').value : '';
-                                    const Q26i = document.querySelector('input[name="Q26i"]:checked') ? document.querySelector('input[name="Q26i"]:checked').value : '';
-                                    const Q26s = document.querySelector('input[name="Q26s"]:checked') ? document.querySelector('input[name="Q26s"]:checked').value : '';
-                                    const Q27i = document.querySelector('input[name="Q27i"]:checked') ? document.querySelector('input[name="Q27i"]:checked').value : '';
-                                    const Q27s = document.querySelector('input[name="Q27s"]:checked') ? document.querySelector('input[name="Q27s"]:checked').value : '';
-                                    const Q28i = document.querySelector('input[name="Q28i"]:checked') ? document.querySelector('input[name="Q28i"]:checked').value : '';
-                                    const Q28s = document.querySelector('input[name="Q28s"]:checked') ? document.querySelector('input[name="Q28s"]:checked').value : '';
-                                    const Q29i = document.querySelector('input[name="Q29i"]:checked') ? document.querySelector('input[name="Q29i"]:checked').value : '';
-                                    const Q29s = document.querySelector('input[name="Q29s"]:checked') ? document.querySelector('input[name="Q29s"]:checked').value : '';
-                                    const Q30i = document.querySelector('input[name="Q30i"]:checked') ? document.querySelector('input[name="Q30i"]:checked').value : '';
-                                    const Q30s = document.querySelector('input[name="Q30s"]:checked') ? document.querySelector('input[name="Q30s"]:checked').value : '';
-                                    const Q31i = document.querySelector('input[name="Q31i"]:checked') ? document.querySelector('input[name="Q31i"]:checked').value : '';
-                                    const Q31s = document.querySelector('input[name="Q31s"]:checked') ? document.querySelector('input[name="Q31s"]:checked').value : '';
-                                    const Q32i = document.querySelector('input[name="Q32i"]:checked') ? document.querySelector('input[name="Q32i"]:checked').value : '';
-                                    const Q32s = document.querySelector('input[name="Q32s"]:checked') ? document.querySelector('input[name="Q32s"]:checked').value : '';
-                                    const Q33i = document.querySelector('input[name="Q33i"]:checked') ? document.querySelector('input[name="Q33i"]:checked').value : '';
-                                    const Q33s = document.querySelector('input[name="Q33s"]:checked') ? document.querySelector('input[name="Q33s"]:checked').value : '';
-
-                                    //This is for f cloumn
-
-                                    const fQ13i = document.querySelector('input[name="fQ13i"]:checked') ? document.querySelector('input[name="fQ13i"]:checked').value : '';
-                                    const fQ13s = document.querySelector('input[name="fQ13s"]:checked') ? document.querySelector('input[name="fQ13s"]:checked').value : '';
-                                    const fQ14i = document.querySelector('input[name="fQ14i"]:checked') ? document.querySelector('input[name="fQ14i"]:checked').value : '';
-                                    const fQ14s = document.querySelector('input[name="fQ14s"]:checked') ? document.querySelector('input[name="fQ14s"]:checked').value : '';
-                                    const fQ15i = document.querySelector('input[name="fQ15i"]:checked') ? document.querySelector('input[name="fQ15i"]:checked').value : '';
-                                    const fQ15s = document.querySelector('input[name="fQ15s"]:checked') ? document.querySelector('input[name="fQ15s"]:checked').value : '';
-                                    const fQ16i = document.querySelector('input[name="fQ16i"]:checked') ? document.querySelector('input[name="fQ16i"]:checked').value : '';
-                                    const fQ16s = document.querySelector('input[name="fQ16s"]:checked') ? document.querySelector('input[name="fQ16s"]:checked').value : '';
-                                    const fQ17i = document.querySelector('input[name="fQ17i"]:checked') ? document.querySelector('input[name="fQ17i"]:checked').value : '';
-                                    const fQ17s = document.querySelector('input[name="fQ17s"]:checked') ? document.querySelector('input[name="fQ17s"]:checked').value : '';
-                                    const fQ18i = document.querySelector('input[name="fQ18i"]:checked') ? document.querySelector('input[name="fQ18i"]:checked').value : '';
-                                    const fQ18s = document.querySelector('input[name="fQ18s"]:checked') ? document.querySelector('input[name="fQ18s"]:checked').value : '';
-                                    const fQ19i = document.querySelector('input[name="fQ19i"]:checked') ? document.querySelector('input[name="fQ19i"]:checked').value : '';
-                                    const fQ19s = document.querySelector('input[name="fQ19s"]:checked') ? document.querySelector('input[name="fQ19s"]:checked').value : '';
-                                    const fQ20i = document.querySelector('input[name="fQ20i"]:checked') ? document.querySelector('input[name="fQ20i"]:checked').value : '';
-                                    const fQ20s = document.querySelector('input[name="fQ20s"]:checked') ? document.querySelector('input[name="fQ20s"]:checked').value : '';
-                                    const fQ21i = document.querySelector('input[name="fQ21i"]:checked') ? document.querySelector('input[name="fQ21i"]:checked').value : '';
-                                    const fQ21s = document.querySelector('input[name="fQ21s"]:checked') ? document.querySelector('input[name="fQ21s"]:checked').value : '';
-                                    const fQ22i = document.querySelector('input[name="fQ22i"]:checked') ? document.querySelector('input[name="fQ22i"]:checked').value : '';
-                                    const fQ22s = document.querySelector('input[name="fQ22s"]:checked') ? document.querySelector('input[name="fQ22s"]:checked').value : '';
-                                    const fQ23i = document.querySelector('input[name="fQ23i"]:checked') ? document.querySelector('input[name="fQ23i"]:checked').value : '';
-                                    const fQ23s = document.querySelector('input[name="fQ23s"]:checked') ? document.querySelector('input[name="fQ23s"]:checked').value : '';
-                                    const fQ24i = document.querySelector('input[name="fQ24i"]:checked') ? document.querySelector('input[name="fQ24i"]:checked').value : '';
-                                    const fQ24s = document.querySelector('input[name="fQ24s"]:checked') ? document.querySelector('input[name="fQ24s"]:checked').value : '';
-                                    const fQ25i = document.querySelector('input[name="fQ25i"]:checked') ? document.querySelector('input[name="fQ25i"]:checked').value : '';
-                                    const fQ25s = document.querySelector('input[name="fQ25s"]:checked') ? document.querySelector('input[name="fQ25s"]:checked').value : '';
-                                    const fQ26i = document.querySelector('input[name="fQ26i"]:checked') ? document.querySelector('input[name="fQ26i"]:checked').value : '';
-                                    const fQ26s = document.querySelector('input[name="fQ26s"]:checked') ? document.querySelector('input[name="fQ26s"]:checked').value : '';
-                                    const fQ27i = document.querySelector('input[name="fQ27i"]:checked') ? document.querySelector('input[name="fQ27i"]:checked').value : '';
-                                    const fQ27s = document.querySelector('input[name="fQ27s"]:checked') ? document.querySelector('input[name="fQ27s"]:checked').value : '';
-                                    const fQ28i = document.querySelector('input[name="fQ28i"]:checked') ? document.querySelector('input[name="fQ28i"]:checked').value : '';
-                                    const fQ28s = document.querySelector('input[name="fQ28s"]:checked') ? document.querySelector('input[name="fQ28s"]:checked').value : '';
-                                    const fQ29i = document.querySelector('input[name="fQ29i"]:checked') ? document.querySelector('input[name="fQ29i"]:checked').value : '';
-                                    const fQ29s = document.querySelector('input[name="fQ29s"]:checked') ? document.querySelector('input[name="fQ29s"]:checked').value : '';
-                                    const fQ30i = document.querySelector('input[name="fQ30i"]:checked') ? document.querySelector('input[name="fQ30i"]:checked').value : '';
-                                    const fQ30s = document.querySelector('input[name="fQ30s"]:checked') ? document.querySelector('input[name="fQ30s"]:checked').value : '';
-                                    const fQ31i = document.querySelector('input[name="fQ31i"]:checked') ? document.querySelector('input[name="fQ31i"]:checked').value : '';
-                                    const fQ31s = document.querySelector('input[name="fQ31s"]:checked') ? document.querySelector('input[name="fQ31s"]:checked').value : '';
-                                    const fQ32i = document.querySelector('input[name="fQ32i"]:checked') ? document.querySelector('input[name="fQ32i"]:checked').value : '';
-                                    const fQ32s = document.querySelector('input[name="fQ32s"]:checked') ? document.querySelector('input[name="fQ32s"]:checked').value : '';
-                                    const fQ33i = document.querySelector('input[name="fQ33i"]:checked') ? document.querySelector('input[name="fQ33i"]:checked').value : '';
-                                    const fQ33s = document.querySelector('input[name="fQ33s"]:checked') ? document.querySelector('input[name="fQ33s"]:checked').value : '';
-
-                                    const Q34 = document.querySelector('input[name="Q34"]:checked') ? document.querySelector('input[name="Q34"]:checked').value : '';
-                                    const Q35 = document.querySelector('input[name="Q35"]:checked') ? document.querySelector('input[name="Q35"]:checked').value : '';
-                                    const Q36 = document.querySelector('input[name="Q36"]:checked') ? document.querySelector('input[name="Q36"]:checked').value : '';
-                                    const Q37 = document.querySelector('input[name="Q37"]:checked') ? document.querySelector('input[name="Q37"]:checked').value : '';
-                                    const Q38 = document.querySelector('input[name="Q38"]:checked') ? document.querySelector('input[name="Q38"]:checked').value : '';
-                                    const Q39 = document.querySelector('input[name="Q39"]:checked') ? document.querySelector('input[name="Q39"]:checked').value : '';
-                                    const Q40 = document.querySelector('input[name="Q40"]:checked') ? document.querySelector('input[name="Q40"]:checked').value : '';
-                                    const Q40a = document.querySelector('input[name="Q40a"]:checked') ? document.querySelector('input[name="Q40a"]:checked').value : '';
-                                    const Q40b = document.querySelector('input[name="Q40b"]:checked') ? document.querySelector('input[name="Q40b"]:checked').value : '';
-
-                                    /*This is for section c*/
-
-                                    const smartphone = document.querySelector('input[name="smartPhone"]:checked') ? document.querySelector('input[name="smartPhone"]:checked').value : '';
-                                    const data_package = document.querySelector('input[name="data_package"]:checked') ? document.querySelector('input[name="data_package"]:checked').value : '';
-                                    const Q41 = document.querySelector('input[name="Q41"]:checked') ? document.querySelector('input[name="Q41"]:checked').value : '';
-                                    const Q42 = document.querySelector('input[name="Q42"]:checked') ? document.querySelector('input[name="Q42"]:checked').value : '';
-                                    const Q43 = document.querySelector('input[name="Q43"]:checked') ? document.querySelector('input[name="Q43"]:checked').value : '';
-                                    const Q44 = document.querySelector('input[name="Q44"]:checked') ? document.querySelector('input[name="Q44"]:checked').value : '';
-                                    const Q45 = document.querySelector('input[name="Q45"]:checked') ? document.querySelector('input[name="Q45"]:checked').value : '';
-
-                                    const o1i = document.querySelector('input[name="o1i"]:checked') ? document.querySelector('input[name="o1i"]:checked').value : '';
-                                    const o1s = document.querySelector('input[name="o1s"]:checked') ? document.querySelector('input[name="o1s"]:checked').value : '';
-                                    const o2i = document.querySelector('input[name="o2i"]:checked') ? document.querySelector('input[name="o2i"]:checked').value : '';
-                                    const o2s = document.querySelector('input[name="o2s"]:checked') ? document.querySelector('input[name="o2s"]:checked').value : '';
-                                    const o3i = document.querySelector('input[name="o3i"]:checked') ? document.querySelector('input[name="o3i"]:checked').value : '';
-                                    const o3s = document.querySelector('input[name="o3s"]:checked') ? document.querySelector('input[name="o3s"]:checked').value : '';
-                                    const o4i = document.querySelector('input[name="o4i"]:checked') ? document.querySelector('input[name="o4i"]:checked').value : '';
-                                    const o4s = document.querySelector('input[name="o4s"]:checked') ? document.querySelector('input[name="o4s"]:checked').value : '';
-                                    const o5i = document.querySelector('input[name="o5i"]:checked') ? document.querySelector('input[name="o5i"]:checked').value : '';
-                                    const o5s = document.querySelector('input[name="o5s"]:checked') ? document.querySelector('input[name="o5s"]:checked').value : '';
-                                    const o6i = document.querySelector('input[name="o6i"]:checked') ? document.querySelector('input[name="o6i"]:checked').value : '';
-                                    const o6s = document.querySelector('input[name="o6s"]:checked') ? document.querySelector('input[name="o6s"]:checked').value : '';
-                                    const o7i = document.querySelector('input[name="o7i"]:checked') ? document.querySelector('input[name="o7i"]:checked').value : '';
-                                    const o7s = document.querySelector('input[name="o7s"]:checked') ? document.querySelector('input[name="o7s"]:checked').value : '';
-
-                                    const otherTravelText = document.getElementById('OtherTravelPartner').value;
-                                    const otherPurposeText = document.getElementById('OtherTravelPurpose').value;
-
-                                    // Get the currenQ13
-                                    const dateTime = getCurrentDateTime();
-
-                                    // Create an object with the form data, including geolocation data
-                                    const formDataObject = {
-                                        Ename: ename,
-                                        Route: route,
-                                        Gender: gender,
-                                        Age: age,
-                                        Income: income,
-                                        Employment: employment,
-                                        Education: education,
-                                        OriginArea: origin_area,
-                                        OriginPin: origin_pin,
-                                        DestinationArea: destination_area,
-                                        DestinationPin: destination_pin,
-                                        City: city,
-                                        Latitude: latitude,
-                                        Longitude: longitude,
-                                        TravelWork: travel_work,
-                                        TravelPartner: travel_partner === '5' ? otherTravelText : travel_partner,
-                                        TravelPurpose: travel_purpose === '5' ? otherPurposeText : travel_purpose,
-                                        Travel11: travel_11,
-                                        /*This is for image*/
-                                        OriginType: originType,
-                                        StartingTime: startingTime,
-                                        Duration: duration,
-                                        Transportation: transportation,
-                                        WaitingTime: waitingTime,
-                                        CToe: cToe,
-                                        WaitingTimeE: waitingTimeE,
-                                        Durationf: durationf,
-                                        Ftransportation: ftransportation,
-                                        DestinationType: destinationType,
-                                        EndTime: endTime,
-                                        Q13i: Q13i,
-                                        Q13s: Q13s,
-                                        Q14i: Q14i,
-                                        Q14s: Q14s,
-                                        Q15i: Q15i,
-                                        Q15s: Q15s,
-                                        Q16i: Q16i,
-                                        Q16s: Q16s,
-                                        Q17i: Q17i,
-                                        Q17s: Q17s,
-                                        Q18i: Q18i,
-                                        Q18s: Q18s,
-                                        Q19i: Q19i,
-                                        Q19s: Q19s,
-                                        Q20i: Q20i,
-                                        Q20s: Q20s,
-                                        Q21i: Q21i,
-                                        Q21s: Q21s,
-                                        Q22i: Q22i,
-                                        Q22s: Q22s,
-                                        Q23i: Q23i,
-                                        Q23s: Q23s,
-                                        Q24i: Q24i,
-                                        Q24s: Q24s,
-                                        Q25i: Q25i,
-                                        Q25s: Q25s,
-                                        Q26i: Q26i,
-                                        Q26s: Q26s,
-                                        Q27i: Q27i,
-                                        Q27s: Q27s,
-                                        Q28i: Q28i,
-                                        Q28s: Q28s,
-                                        Q29i: Q29i,
-                                        Q29s: Q29s,
-                                        Q30i: Q30i,
-                                        Q30s: Q30s,
-                                        Q30i: Q30i,
-                                        Q30s: Q30s,
-                                        Q31i: Q31i,
-                                        Q31s: Q31s,
-                                        Q32i: Q32i,
-                                        Q32s: Q32s,
-                                        Q33i: Q33i,
-                                        Q33s: Q33s,
-                                        fQ13i: fQ13i,
-                                        fQ13s: fQ13s,
-                                        fQ14i: fQ14i,
-                                        fQ14s: fQ14s,
-                                        fQ15i: fQ15i,
-                                        fQ15s: fQ15s,
-                                        fQ16i: fQ16i,
-                                        fQ16s: fQ16s,
-                                        fQ17i: fQ17i,
-                                        fQ17s: fQ17s,
-                                        fQ18i: fQ18i,
-                                        fQ18s: fQ18s,
-                                        fQ19i: fQ19i,
-                                        fQ19s: fQ19s,
-                                        fQ20i: fQ20i,
-                                        fQ20s: fQ20s,
-                                        fQ21i: fQ21i,
-                                        fQ21s: fQ21s,
-                                        fQ22i: fQ22i,
-                                        fQ22s: fQ22s,
-                                        fQ23i: fQ23i,
-                                        fQ23s: fQ23s,
-                                        fQ24i: fQ24i,
-                                        fQ24s: fQ24s,
-                                        fQ25i: fQ25i,
-                                        fQ25s: fQ25s,
-                                        fQ26i: fQ26i,
-                                        fQ26s: fQ26s,
-                                        fQ27i: fQ27i,
-                                        fQ27s: fQ27s,
-                                        fQ28i: fQ28i,
-                                        fQ28s: fQ28s,
-                                        fQ29i: fQ29i,
-                                        fQ29s: fQ29s,
-                                        fQ30i: fQ30i,
-                                        fQ30s: fQ30s,
-                                        fQ30i: fQ30i,
-                                        fQ30s: fQ30s,
-                                        fQ31i: fQ31i,
-                                        fQ31s: fQ31s,
-                                        fQ32i: fQ32i,
-                                        fQ32s: fQ32s,
-                                        fQ33i: fQ33i,
-                                        fQ33s: fQ33s,
-                                        Q34: Q34,
-                                        Q35: Q35,
-                                        Q36: Q36,
-                                        Q37: Q37,
-                                        Q38: Q38,
-                                        Q39: Q39,
-                                        Q40: Q40,
-                                        Q40a: Q40a,
-                                        Q40b: Q40b,
-                                        smartphone: smartphone,
-                                        data_package: data_package,
-                                        Q41: Q41,
-                                        Q42: Q42,
-                                        Q43: Q43,
-                                        Q44: Q44,
-                                        Q45: Q45,
-                                        DateTime: dateTime,
-                                        StartdateTime: StartdateTime,
-                                        o1i: o1i,
-                                        o1s: o1s,
-                                        o2i: o2i,
-                                        o2s: o2s,
-                                        o3i: o3i,
-                                        o3s: o3s,
-                                        o4i: o4i,
-                                        o4s: o4s,
-                                        o5i: o5i,
-                                        o5s: o5s,
-                                        o6i: o6i,
-                                        o6s: o6s,
-                                        o7i: o7i,
-                                        o7s: o7s,
-
-
-
-
-                                    };
-
-                                    // Push the form data to local storage
-                                    if (localStorage.formdata) {
-                                        const existingData = JSON.parse(localStorage.formdata);
-                                        existingData.push(formDataObject);
-                                        localStorage.formdata = JSON.stringify(existingData);
-                                    } else {
-                                        localStorage.formdata = JSON.stringify([formDataObject]);
-                                    }
-
-                                    // Clear the form
-                                    document.querySelector('form').reset();
-
-                                    location.reload();
-                                    window.location.href = "entry.html";
-
-                                }
-
+                                localStorage.formdata = JSON.stringify([formDataObject]);
                             }
 
-                        } else {
-                            alert('Please fillup the all field');
+                            // Clear the form
+                            document.querySelector('form').reset();
+
+                            location.reload();
+                            window.location.href = "entry.html";
+
                         }
+
 
                     });
                 });
