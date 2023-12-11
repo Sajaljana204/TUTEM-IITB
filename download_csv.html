@@ -130,7 +130,8 @@
             // Check if the user clicked "OK"
             if (userConfirmed) {
                 // Clear all data from local storage
-                localStorage.removeItem('formdata');               
+                localStorage.removeItem('formdata');  
+                location.reload();
             }
         });
 
