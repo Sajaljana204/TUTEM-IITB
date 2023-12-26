@@ -300,6 +300,12 @@
                                 2-Wheeler<br>(app)
                             </label>
                         </div>
+                         <div class="text-container">
+                            <label>
+                                <input type="radio" name="transportation" value="Train">
+                                Train
+                            </label>
+                        </div>
                         <div class="text-container">
                             <label>
                                 <input type="radio" name="transportation" value="personal_car">
@@ -411,6 +417,12 @@
                             <label>
                                 <input type="radio" name="ftransportation" value="2-wheeler(app)">
                                 2-Wheeler<br>(app)
+                            </label>
+                        </div>
+                        <div class="text-container">
+                            <label>
+                                <input type="radio" name="ftransportation" value="Train">
+                                Train
                             </label>
                         </div>
                         <div class="text-container">
@@ -2561,7 +2573,7 @@
                     nmtDiv.classList.remove('hidden');
                     paratransitDiv.classList.add('hidden');
                     personalDiv.classList.add('hidden');
-                } else if (radioButton.value === 'auto' || radioButton.value === 'auto_app' || radioButton.value === 'cab(app)' || radioButton.value === 'cab' || radioButton.value === '2-Wheeler(app)') {
+                } else if (radioButton.value === 'auto' || radioButton.value === 'auto_app' || radioButton.value === 'cab(app)' || radioButton.value === 'cab' || radioButton.value === '2-Wheeler(app)' || radioButton.value === 'Train') {
                     nmtDiv.classList.add('hidden');
                     paratransitDiv.classList.remove('hidden');
                     personalDiv.classList.add('hidden')
@@ -2587,7 +2599,7 @@
                     paratransitDiv.classList.add('f_hidden');
                     personalDiv.classList.add('f_hidden');
 
-                } else if (radioButton.value === 'auto' || radioButton.value === 'auto_app' || radioButton.value === 'cab(app)' || radioButton.value === 'cab' || radioButton.value === '2-wheeler(app)') {
+                } else if (radioButton.value === 'auto' || radioButton.value === 'auto_app' || radioButton.value === 'cab(app)' || radioButton.value === 'cab' || radioButton.value === '2-wheeler(app)'|| radioButton.value === 'Train') {
                     nmtDiv.classList.add('f_hidden');
                     paratransitDiv.classList.remove('f_hidden');
                     personalDiv.classList.add('f_hidden')
